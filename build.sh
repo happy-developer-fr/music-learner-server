@@ -2,7 +2,7 @@
 srcPath="cmd"
 pkgFile="main.go"
 outputPath="build"
-app="gql-server"
+app="music-learner-server"
 output="$outputPath/$app"
 src="$srcPath/$app/$pkgFile"
 
