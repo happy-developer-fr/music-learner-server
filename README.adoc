@@ -1,11 +1,16 @@
 = Music Learner Server
+
 == Docker
+
+=== Build
 
 Run the command below to build the container
 [source,sh]
 ----
 docker build -t go-music-learner-server .
 ----
+
+=== Run
 
 Run the command below to launch the the server with a mongo db
 [source,sh]
@@ -21,3 +26,19 @@ You should have a response of type :
   "message": "Pong"
 }
 ----
+
+== Local dev
+
+Run a mongo server in docker
+[source,sh]
+----
+docker run -d -p27017:27017 --name mongo mongo
+----
+
+If you want a nice dev experience get fresh to have automatic refresh
+[source,sh]
+----
+go get github.com/pilu/fresh
+----
+
+Then run `fresh`
