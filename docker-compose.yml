@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    image: go-music-learner-server
+    ports:
+      - "8080:7777"
+    links:
+      - mongo
+    environment:
+      - MONGO_URL=mongodb://mongo:27017
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"

@@ -2,9 +2,10 @@ package server
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/happy-developer-fr/music-learner-server/internal"
 	"github.com/happy-developer-fr/music-learner-server/internal/handlers"
-	"github.com/happy-developer-fr/music-learner-server/internal/mongo"
 	"github.com/happy-developer-fr/music-learner-server/pkg/utils"
+	"go.mongodb.org/mongo-driver/mongo"
 	"log"
 )
 
@@ -24,7 +25,11 @@ func init() {
 
 func Run() {
 	utils.DefineLogger()
-	client := mongo.ConnectMongo("mongodb://localhost:27017")
+	var client *mongo.Client
+	if mongoUrl, err := utils.MustGet("MONGO_URL", "mongodb://localhost:27017"); err != nil {
+	} else {
+		client = internal.ConnectMongo(mongoUrl)
+	}
 	collection := client.Database("musical_notation").Collection("songs")
 	router := gin.Default()
 

@@ -1,0 +1,23 @@
+= Music Learner Server
+== Docker
+
+Run the command below to build the container
+[source,sh]
+----
+docker build -t go-music-learner-server .
+----
+
+Run the command below to launch the the server with a mongo db
+[source,sh]
+----
+docker-compose up
+----
+Just go to http://localhost:8080/ping
+
+You should have a response of type :
+[source,json]
+----
+{
+  "message": "Pong"
+}
+----
