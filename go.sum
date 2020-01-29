@@ -60,6 +60,12 @@ github.com/ugorji/go/codec v1.1.7 h1:2SvQaVZ1ouYrrKKwoSk2pzd4A9evlKJb9oTL+OaLUSs
 github.com/ugorji/go/codec v1.1.7/go.mod h1:Ax+UKWsSmolVDwsd+7N3ZtXu+yMGCf907BLYF3GoBXY=
 gitlab.com/read-music-learner/music-learner-server.git v0.0.0-20200109103509-dbf55de0ccb1 h1:9eBwTM6hLh13XwmeekalFqcBCaCscHohjadfrWFDGk4=
 gitlab.com/read-music-learner/music-learner-server.git v0.0.0-20200109103509-dbf55de0ccb1/go.mod h1:P6IiQRd5h31LT4UxHlwpoS033873qQuBbNnj9FVzGsM=
+gitlab.com/read-music-learner/musical-notation v0.0.0-20191229152755-88a8d70367d3 h1:t4i0TUJxgL3qmSFhQVexE7Es7h3LVeTl7f9RFjfqQHg=
+gitlab.com/read-music-learner/musical-notation v0.0.0-20191229152755-88a8d70367d3/go.mod h1:ppLWcgETKpz5b1mzFbZ/SL5pYyy8XJ5ISXTPYym4wus=
+gitlab.com/read-music-learner/musical-notation v0.0.0-20200129102643-8ca43d715128 h1:ZUuL5jUyiTgAYTgJymd7L9t+HO2xNsJ7U7zcxlKBvwU=
+gitlab.com/read-music-learner/musical-notation v0.0.0-20200129102643-8ca43d715128/go.mod h1:ppLWcgETKpz5b1mzFbZ/SL5pYyy8XJ5ISXTPYym4wus=
+gitlab.com/read-music-learner/musical-notation v0.0.0-20200129104037-a6c4e9380336 h1:ulJOiz5Ro6w6csCFVnraOes0fLjwpERd0lfVvaX74rw=
+gitlab.com/read-music-learner/musical-notation v0.0.0-20200129104037-a6c4e9380336/go.mod h1:ppLWcgETKpz5b1mzFbZ/SL5pYyy8XJ5ISXTPYym4wus=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
 golang.org/x/crypto v0.0.0-20200108215511-5d647ca15757/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
