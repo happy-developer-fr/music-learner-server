@@ -2,8 +2,9 @@ package server
 
 import (
 	"github.com/gin-gonic/gin"
-	"gitlab.com/read-music-learner/music-learner-server/internal/handlers"
-	"gitlab.com/read-music-learner/music-learner-server/pkg/utils"
+	"github.com/happy-developer-fr/music-learner-server/internal/handlers"
+	"github.com/happy-developer-fr/music-learner-server/internal/mongo"
+	"github.com/happy-developer-fr/music-learner-server/pkg/utils"
 	"log"
 )
 
@@ -23,14 +24,16 @@ func init() {
 
 func Run() {
 	utils.DefineLogger()
-
+	client := mongo.ConnectMongo("mongodb://localhost:27017")
+	collection := client.Database("musical_notation").Collection("songs")
 	router := gin.Default()
 
 	// Setup routes
 	router.GET("/ping/:name", handlers.PingWithName())
 	router.GET("/ping", handlers.Ping())
 	router.GET("/song", handlers.SongHandler())
-	router.GET("/song/:pos", handlers.SongNoteHandler())
+	router.GET("/mongo/save", handlers.GenerateAndSaveSongHandler(collection))
+	router.GET("/mongo/get", handlers.GetAnyMongo(collection))
 	router.GET("/note/random", handlers.RandomNoteHandler())
 
 	log.Fatalln(router.Run(":" + port))
