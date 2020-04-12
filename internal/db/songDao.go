@@ -1,17 +1,14 @@
 package db
 
 import (
-	"errors"
-	"fmt"
 	"github.com/happy-developer-fr/musical-notation/pkg/song"
+	uuid "github.com/satori/go.uuid"
 )
 
-func SaveSong(song song.Song) error {
-	if DataBase.NewRecord(song) == false {
-		errorString := fmt.Sprint("Song already exists")
-		return errors.New(errorString)
-	}
-	return nil
+func SaveSong(song song.Song) uuid.UUID {
+	songDb := SongDb{SongId: uuid.NewV4()}
+	DataBase.Create(&songDb)
+	return songDb.SongId
 }
 
 func CountSong() int {

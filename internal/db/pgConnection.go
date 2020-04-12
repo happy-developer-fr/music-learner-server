@@ -26,7 +26,7 @@ func OpenConnection() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
+	DataBase.Exec("set search_path to music_learner")
 	err = DataBase.DB().Ping()
 	if err != nil {
 		log.Fatal("Error: Could not establish a connection with the database")

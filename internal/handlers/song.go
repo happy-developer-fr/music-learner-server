@@ -6,7 +6,6 @@ import (
 	"github.com/happy-developer-fr/musical-notation/pkg/note"
 	"github.com/happy-developer-fr/musical-notation/pkg/pitch"
 	"github.com/happy-developer-fr/musical-notation/pkg/song"
-	"log"
 	"net/http"
 	"strconv"
 )
@@ -33,9 +32,7 @@ func SongHandler() gin.HandlerFunc {
 
 func GenerateAndSaveSongHandler() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		if err := db.SaveSong(randomSong(12)); err != nil {
-			log.Fatalln("Error when inserting in mongo" + err.Error())
-		}
+		db.SaveSong(randomSong(12))
 	}
 }
 
