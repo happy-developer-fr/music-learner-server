@@ -1,8 +1,8 @@
 # Start from the latest golang base image
-FROM golang:latest
+FROM golang:latest as builder
 
 # Add Maintainer Info
-LABEL maintainer="COTTET Julien <tettoc@gmail.com>"
+LABEL maintainer="COTTET Julien <happy.developper.fr@gmail.com>"
 
 # Set the Current Working Directory inside the container
 WORKDIR /app
@@ -19,6 +19,12 @@ COPY . .
 # Build the Go app
 RUN go build -o main .
 
+
+FROM scratch
+LABEL maintainer="COTTET Julien <happy.developper.fr@gmail.com>"
+
+WORKDIR /app
+COPY --from=builder /app .
 # Expose port 8080 to the outside world
 EXPOSE 7777
 
