@@ -18,6 +18,12 @@ func randomSong(n int) song.Song {
 	return song.Song{Notes: songNotes}
 }
 
+func CountSongHandler() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.JSON(http.StatusOK, db.CountSong())
+	}
+}
+
 func SongHandler() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		mode := c.Query("mode")
@@ -36,7 +42,7 @@ func GenerateAndSaveSongHandler() gin.HandlerFunc {
 	}
 }
 
-func GetAnyMongo() gin.HandlerFunc {
+func GetAny() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var aSong song.Song
 		db.DataBase.First(&aSong)

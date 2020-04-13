@@ -31,8 +31,9 @@ func Run() {
 	router.GET("/ping/:name", handlers.PingWithName())
 	router.GET("/ping", handlers.Ping())
 	router.GET("/song", handlers.SongHandler())
-	router.GET("/mongo/save", handlers.GenerateAndSaveSongHandler())
-	router.GET("/mongo/get", handlers.GetAnyMongo())
+	router.GET("/song/count", handlers.CountSongHandler())
+	router.GET("/song/random/save", handlers.GenerateAndSaveSongHandler())
+	router.GET("/song/random/get", handlers.GetAny())
 	router.GET("/note/random", handlers.RandomNoteHandler())
 
 	log.Fatalln(router.Run(":" + port))
